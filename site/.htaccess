@@ -1,0 +1,28 @@
+Options +FollowSymlinks
+Options -Indexes
+RewriteEngine On
+
+AuthUserFile /home4/vbranyik/.htpasswds/.tickets
+
+# AuthType Basic
+# AuthName "tickets.bc-cs.info"
+# Require valid-user
+
+RewriteRule ^incident/edit/([\w-]+)/?$ /incident.php?incno=$1 [L]
+RewriteRule ^incident/?$ /incident.php [L]
+
+RewriteRule ^payment/([\w-]+)/?$ /payment.php?invno=$1 [L]
+
+RewriteRule ^printyear/([\w-]+)/?$ /printyear.php?year=$1 [L]
+
+RewriteRule ^setauto/?$ /setauto.php [L]
+
+RewriteRule ^tickets/edit/([\w-]+)/?$ /incident.php?incno=$1 [L]
+RewriteRule ^tickets/([\w-]+)/?$ /tickets.php?start=$1 [L]
+RewriteRule ^tickets/?$ /tickets.php [L]
+RewriteRule ^time/?$ /time.php [L]
+
+RewriteRule ^worksheet/edit/([\w-]+)/([\w-]+)/?$ /worksheet.php?incno=$1&start=$2 [L]
+RewriteRule ^worksheet/edit/([\w-]+)/?$ /worksheet.php?incno=$1 [L]
+
+RewriteRule ^yearend/?$ /yearend.php [L]

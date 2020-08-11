@@ -1,0 +1,27 @@
+# Default Netbeans Entries
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Supporting Files
+*.log
+*.sql
+*._DS_Store
+**/robots.txt
+site/blank.php
+
+# Exclude settings files
+settings.php
+ticketsdb.php
+
+# Excluded Directories
+_dbconnect/
+_graphics/
+_htpasswd
+_inactive
+_to_delete

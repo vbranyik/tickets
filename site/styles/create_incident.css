@@ -1,0 +1,18 @@
+/* 
+    Document   : create_incident
+    Created on : Dec 17, 2016, 3:57:16 PM
+    Author     : matyas
+    Description:
+        This is for the Create Incident for
+*/
+td.centered-33 { text-align: center; width: 33%; }
+
+td.input-label-above { background-color: #CF0; border-bottom: 1px solid #000; border-top: 1px solid #000; color: #000; font-family: arial; font-size: 12pt; font-weight: bold; text-align: center; } /* */
+
+td.rec-label-above { background-color: #FCC200; border-bottom: 1px solid #000; border-top: 1px solid #000; color: #000; font-family: arial; font-size: 12pt; font-weight: bold; text-align: center; } /* */
+
+td.select-line-left { padding-right: 10px; text-align: right; width: 50%; }
+td.select-line-right { padding-left: 10px; text-align: left; width: 50%; }
+
+.recurring { display: none; }
+

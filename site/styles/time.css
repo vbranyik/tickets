@@ -1,0 +1,39 @@
+/** 
+  * Created on : Jun 9, 2020, 3:54:43 PM
+  * Author     : matyas
+  */
+
+
+
+.billRate,
+.billTime,
+.endTime,
+.reCalc,
+.startTime {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.status-line {
+    display: inline-block;
+    float: left
+}
+
+#statusMessage {
+    color: #ff0000;
+    padding-left: 10px;
+    width: 80%;
+}
+
+#submit-line {
+    overflow: hidden;
+}
+
+#submit-time {
+    width: 15%;
+}
+
+#workInput {
+  width: 95%;
+}

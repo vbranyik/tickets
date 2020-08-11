@@ -1,0 +1,33 @@
+/* 
+    Created on : Dec 22, 2017, 3:09:11 PM
+    Author     : matyas
+*/
+
+input { width: 95%; }
+textarea { width: 95%; }
+tr { vertical-align: top; }
+
+.main { width: 1000px; }
+.main-wide { 
+    margin: 0 auto;
+    width: 95%; 
+}
+
+td.label { font-weight: bold; padding-right: 10px; text-align: right; width: 30%; }
+td.input-right { padding-left: 10px; text-align: left; width: 70%; }
+
+.left { text-align: left; }
+.right { text-align: right; }
+
+.cname { padding-left: 5px; text-align: left; width: 20%; }
+.issue { padding-left: 5px; text-align: left; width: 20%; }
+.work { padding-left: 5px; text-align: left; width: 42%; }
+.freq { padding-left: 10px; text-align: left; width: 2%; }
+.terms { padding-left: 10px; text-align: left; width: 6%; }
+.id { text-align: left; width: 2%; }
+.units { padding-right: 5px; text-align: right; width: 3%; }
+.rate { padding-right: 5px; text-align: right; width: 4%; }
+.date { padding-right: 5px; text-align: right; width: 4%; }
+
+
+.separate { margin: 25px 0px; } 

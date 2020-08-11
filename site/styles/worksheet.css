@@ -1,0 +1,20 @@
+
+td.col-worksheet-left { text-align: left; width: 80%; }
+td.col-worksheet-right { text-align: left; width: 20%; }
+
+td.inc-info-1 { text-align: left; width: 12%; }
+td.inc-info-2 { text-align: left; width: 17%; }
+td.inc-info-3 { text-align: left; width: 20%; }
+td.inc-info-4 { text-align: left; width: 16%; }
+td.inc-info-5 { text-align: left; width: 34%; }
+
+td.work-entry-date { font-size: 11pt; text-align: left; width: 23%; }
+td.work-entry-work { text-align: left; width: 90%; }
+td.work-entry-timein { font-size: 11pt; text-align: center; width: 25%; }
+td.work-entry-timeout { font-size: 11pt; text-align: center; width: 27%; }
+td.work-entry-units { font-size: 11pt; padding-right: 5px; text-align: left; width: 7%; }
+td.work-entry-units-label { font-size: 11pt; text-align: right; width: 2%; }
+td.work-entry-rate { font-size: 11pt; padding-right: 5px; text-align: left; width: 9%; }
+td.work-entry-rate-label { font-size: 11pt; text-align: right; width: 7%; }
+td.work-entry-submit { text-align: center; width: 10%; }
+

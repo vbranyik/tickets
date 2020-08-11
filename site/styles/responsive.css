@@ -1,0 +1,14 @@
+/** 
+  *  Created on : Jun 9, 2020, 7:16:11 AM
+  *  Author     : Vilmos Branyik
+  */
+
+#main-container {
+  background-color: #fff;
+  border: 1px solid #000;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 10px 25px;
+  max-width: 600px;
+  width: 90%;
+}
