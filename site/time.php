@@ -9,14 +9,14 @@ session_start();
 // --> Load paths based on server and then load libraries 
 require_once dirname(__DIR__) . "/settings.php";
 
+// --> Required libraries
+require_once $sys_path['code'] . "/lib-required.php";
+require_once $sys_path['code'] . "/lib-timeentry.php.inc";
+
 // Check to see if page authentication is needed
 if (strtolower($auth) == "yes") {
   check_auth(0);
 }
-
-// --> Required libraries
-require_once $sys_path['code'] . "/lib-required.php";
-require_once $sys_path['code'] . "/lib-timeentry.php.inc";
 
 // --> Set return page
 $returnLink = returnLink();
