@@ -152,10 +152,10 @@ var statusMessage = document.getElementById("statusMessage");
 
 function clearForm() {
     document.getElementById("incno").selectedIndex = 0;    
-    var incdateElement = document.getElementById("workDate").value = "";    
-    var incstartElement = document.getElementById("workStart").value = "";    
-    var incendElement = document.getElementById("workEnd").value = "";    
-    var inctimeElement = document.getElementById("billTime").value = "";    
-    var incrateElement = document.getElementById("billRate").value = "";    
-    var incworkElement = document.getElementById("workInput").value = "";  
+    document.getElementById("workDate").value = "";    
+    document.getElementById("workStart").value = "";    
+    document.getElementById("workEnd").value = "";    
+    document.getElementById("billTime").value = "";    
+    document.getElementById("billRate").value = "";    
+    document.getElementById("workInput").value = "";  
 }

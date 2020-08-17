@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$_SESSION['returnURL'] = "/tickets";
+
 // --> Load paths based on server and then load libraries 
 require_once dirname(__DIR__) . "/settings.php";
 
@@ -14,8 +16,9 @@ if (strtolower($auth) !="no") {
 }
 
 // --> Check to see if user is selecting a button at the bottom of the page
-if ( isset($_POST['btnIncident']) ) { header("location: /incident"); exit; }
 if ( isset($_POST['btnAutoBill']) ) { header("location: /setauto"); exit; }
+if ( isset($_POST['btnIncident']) ) { header("location: /incident"); exit; }
+if ( isset($_POST['btnTimeEntry']) ) { header("location: /time"); exit; }
 
 // --> Page size default
 $page_size = 15;
@@ -188,19 +191,22 @@ if ( isset($_POST['btnUnpaid']) ) {
       <td class="centered">
       <table class="clear">
       <tr>
-        <td class="submit-5-1">
+        <td class="submit-6-left">
+          <input class="btn-gr" type="submit" name="btnTimeEntry" value="Time Entry" />
+        </td>
+        <td class="submit-6-mid">
           <input class="btn-bk" type="submit" name="btnOpen" value="Open Incidents" />
         </td>
-        <td class="submit-5-2">
+        <td class="submit-6-mid">
           <input class="btn-gr" type="submit" name="btnIncident" value="New Incident" />
         </td>
-        <td class="submit-5-3">
+        <td class="submit-6-mid">
           <input class="btn-bl" type="submit" name="btnAutoBill" value="Auto Bill" />
         </td>
-        <td class="submit-5-4">
+        <td class="submit-6-mid">
           <input class="btn-bl" type="submit" name="btnUnpaid" value="Unpaid Invoices" />
         </td>
-        <td class="submit-5-5">
+        <td class="submit-6-right">
           <input class="btn-bk" type="submit" name="btnReset" value="Refresh" />
         </td>
       </tr>

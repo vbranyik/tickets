@@ -15,7 +15,11 @@ if (strtolower($auth) == "yes") {
 }
 
 // --> Required libraries
+require_once $sys_path['code'] . "/lib-required.php";
 require_once $sys_path['code'] . "/lib-timeentry.php.inc";
+
+// --> Set return page
+$returnLink = returnLink();
 
 // --> If the POST array is set save data
 if (isset($_POST) && count($_POST) > 0) {
@@ -40,6 +44,13 @@ if (isset($_POST) && count($_POST) > 0) {
 </head>
 <body>
   <div id="main-container">
+    <div class="close-window">
+        <a target="_self" href="<?php echo $returnLink; ?>">
+          <button class="close-button" aria-label="Close alert" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </a>
+    </div>
     <h1>Time Entry</h1>
     <div id="getInc" class="padInput">
       <div class="incnum">
@@ -75,14 +86,6 @@ if (isset($_POST) && count($_POST) > 0) {
   </div>
   <script type="text/javascript" src="js/time.js"></script>
   <script type="text/javascript">
-//    const selectElement = document.querySelector('#incno');
-//
-//    selectElement.addEventListener('change', (event) => {
-//      // setForm(event.target.value);
-//      ajaxCall("/code/getincidents.php?incno=" + event.target.value, setForm);
-//    });
-
-
   document.addEventListener('DOMContentLoaded', function() {
       ajaxCall("/code/getincidents.php", setSelect);
     }, false);

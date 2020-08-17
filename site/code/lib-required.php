@@ -90,3 +90,13 @@ function firstYearSelect($yearPassed = "", $type = "") {
   return $selector;  
 }
 
+function returnLink() {
+  if(isset($_SESSION['returnURL']) || trim($_SESSION['returnURL']) !== "") {
+    $pageLink = $_SESSION['returnURL'];
+  }
+  else {
+    $pageLink = "#";
+  }
+
+  return $pageLink;
+}
