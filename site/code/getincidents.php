@@ -12,6 +12,9 @@ session_start();
 // --> Set paths
 require_once dirname(__DIR__,2) . "/settings.php";
 
+// --> Required libraries
+require_once $sys_path['code'] . "/lib-required.php";
+
 // Check to see if logged in, ignore if on dev server
 if ( substr($_SERVER['HTTP_HOST'],-6) != ".local" ) {
     check_auth(0);

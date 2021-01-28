@@ -67,6 +67,7 @@ if ( $display_type == "DEFAULT" || $display_type == "MODIFY"  ) {
     $forminfo['incdate'] = time();
     $forminfo['custid'] = "";
     $forminfo['reqby'] = "";
+    $forminfo['rate'] = "";
     $forminfo['equipment'] = "";
     $forminfo['location'] = "";
     $forminfo['phone'] = "";
@@ -83,7 +84,8 @@ if ( $display_type == "DEFAULT" || $display_type == "MODIFY"  ) {
 if ( $display_type == "CREATE" ) {
     // --> Transfer POST variable
     $forminfo = $_POST;
-    
+
+
     // --> Convert date string to Time interger
     $forminfo['incdate'] = strtotime($_POST['txt_year_inc']."-".$_POST['txt_month_inc']."-".$_POST['txt_day_inc']);
     $forminfo['recstart'] = strtotime($_POST['txt_year_start']."-".$_POST['txt_month_start']."-".$_POST['txt_day_start']);
@@ -164,7 +166,7 @@ if ( $display_type == "MODIFY" ) {
             <td class="header">Incident System</td>
         </tr>
         <tr>
-            <td class="header-page-label">php print $pagelabel; ?></td>
+            <td class="header-page-label"><?php print $pagelabel; ?></td>
         </tr>
         <?PHP
         // --> If this is a complete incident
@@ -245,6 +247,16 @@ if ( $display_type == "MODIFY" ) {
                 print "<tr>";
                     print "<td class='centered'>";
                         print $forminfo['reqby'];
+                    print "</td>";
+                print "</tr>"; 
+                print "<tr>";
+                    print "<td class='input-label-above'>";
+                        print "Rate";
+                    print "</td>";
+                print "</tr>"; 
+                print "<tr>";
+                    print "<td class='centered'>";
+                        print $forminfo['hourlyrate'];
                     print "</td>";
                 print "</tr>"; 
                 print "<tr>";
@@ -402,47 +414,55 @@ if ( $display_type == "MODIFY" ) {
                     print "</table>";
                     print "</td>";
                 print "</tr>"; 
-                
-                
-                    print "<tr class='std'>";
-                        print "<td class='input-label-above'>";
-                            print "Incident Date";
-                        print "</td>";
-                    print "</tr>";    
-                    print "<tr class='std'>";
-                        print "<td class='centered'>";
-                        enter_date($forminfo['incdate'],"_inc");
-                        print "</td>";
-                    print "</tr>"; 
-                    print "<tr>";
-                        print "<td class='input-label-above'>";
-                            print "Company Name";
-                        print "</td>";
-                    print "</tr>"; 
-                    print "<tr>";
-                        print "<td class='centered'>";
-                            print "<select size='1' name='custid'>";
-                            while ($cust_select = $cust_list->fetch(PDO::FETCH_ASSOC)) {
-                                if ( $forminfo['custid']==$cust_select['custid'] ) {
-                                    print "<option selected value='".$cust_select['custid']."'>".$cust_select['cname']."</option>";
-                                }
-                                else {
-                                print "<option value='".$cust_select['custid']."'>".$cust_select['cname']."</option>";                             
-                                }
-                            }
-                            print "</select>";
-                        print "</td>";
-                    print "</tr>"; 
-                    print "<tr>";
-                        print "<td class=\"input-label-above\">";
-                            print "Requested By";
-                        print "</td>";
-                    print "</tr>"; 
-                print "<tr>";
-                    print "<td class=\"centered\">";
-                        print "<input class=\"filled-95\" type=\"text\" name=\"reqby\" value=\"".$forminfo['reqby']."\" />";
+                print "<tr class='std'>";
+                    print "<td class='input-label-above'>";
+                        print "Incident Date";
+                    print "</td>";
+                print "</tr>";    
+                print "<tr class='std'>";
+                    print "<td class='centered'>";
+                    enter_date($forminfo['incdate'],"_inc");
                     print "</td>";
                 print "</tr>"; 
+                print "<tr>";
+                    print "<td class='input-label-above'>";
+                        print "Company Name";
+                    print "</td>";
+                print "</tr>"; 
+                print "<tr>";
+                    print "<td class='centered'>";
+                        print "<select size='1' name='custid'>";
+                        while ($cust_select = $cust_list->fetch(PDO::FETCH_ASSOC)) {
+                            if ( $forminfo['custid']==$cust_select['custid'] ) {
+                                print "<option selected value='".$cust_select['custid']."'>".$cust_select['cname']."</option>";
+                            }
+                            else {
+                            print "<option value='".$cust_select['custid']."'>".$cust_select['cname']."</option>";                             
+                            }
+                        }
+                        print "</select>";
+                    print "</td>";
+                print "</tr>"; 
+                  print "<tr>";
+                      print "<td class=\"input-label-above\">";
+                          print "Requested By";
+                      print "</td>";
+                  print "</tr>"; 
+                  print "<tr>";
+                      print "<td class=\"centered\">";
+                          print "<input class=\"filled-95\" type=\"text\" name=\"reqby\" value=\"".$forminfo['reqby']."\" />";
+                      print "</td>";
+                  print "</tr>"; 
+              print "<tr>";
+                  print "<td class=\"input-label-above\">";
+                      print "Rate";
+                  print "</td>";
+              print "</tr>"; 
+              print "<tr>";
+                  print "<td class=\"centered\">";
+                      print "<input class=\"filled-95\" type=\"number\" name=\"hourlyrate\" value=\"".$forminfo['hourlyrate']."\" />";
+                  print "</td>";
+              print "</tr>"; 
                 print "<tr>";
                     print "<td class=\"input-label-above\">";
                         print "Equipment To Service";
